@@ -1,0 +1,24 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="389" Width="682">
+    <Grid>
+        <StackPanel Margin="10">
+            <Border BorderBrush="Black" BorderThickness="1">
+                <DataGrid x:Name="resultsDataGrid" AutoGenerateColumns="False" Margin="0,10,0,0" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Аргумент" Binding="{Binding Argument}" />
+                        <DataGridTextColumn Header="Результат" Binding="{Binding Result}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <Button x:Name="startButton" Content="Обчислити" HorizontalAlignment="Center" VerticalAlignment="Top" Click="StartButton_Click" />
+            <TextBox x:Name="inputText" HorizontalAlignment="Left" Margin="0,0,0,10" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="200"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
