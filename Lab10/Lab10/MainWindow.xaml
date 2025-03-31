@@ -1,0 +1,64 @@
+﻿<Window x:Class="Lab10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab10"
+        mc:Ignorable="d"
+        Title="Лаб10" Height="450" Width="450">
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="ResultTextBlock" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="8"  
+                   FontSize="16" />
+
+            <TextBlock Name="SequentialTimeTextBlock" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="8"
+                   FontSize="14" />
+
+            <TextBlock Name="ParallelTimeTextBlock"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="8" 
+                   FontSize="14" />
+
+            <TextBlock Name="SpeedupTextBlock"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="8" 
+                   FontSize="14" />
+
+            <TextBlock Name="EfficiencyTextBlock"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="8" 
+                   FontSize="14" />
+
+            <TextBlock Name="AmdahlTextBlock"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="8" 
+                   FontSize="14" />
+
+            <TextBlock Name="GustafsonTextBlock"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="8" 
+                   FontSize="14" />
+        </StackPanel>
+
+
+        <Button Name="StartButton" 
+                Content="Start Calculation" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"
+                Width="150" 
+                Height="40" 
+                Margin="40"
+                Click="StartButton_Click"/>
+    </Grid>
+</Window>

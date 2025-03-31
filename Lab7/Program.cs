@@ -12,6 +12,7 @@ namespace Lab7
     {
         static ManualResetEvent findNegativeDone = new ManualResetEvent(false);
         static ManualResetEvent sumNegativeDone = new ManualResetEvent(false);
+        //static Mutex mutex = new Mutex();
 
         static void Main(string[] args)
         {
@@ -41,6 +42,7 @@ namespace Lab7
 
         static void FindNegative(int[,] matrix)
         {
+            //mutex.WaitOne();
             Console.WriteLine("\nПошук стовпця з від'ємним елементом..");
             Thread.Sleep(1000);
             int index = -1;
@@ -57,14 +59,16 @@ namespace Lab7
 
             }
             Console.WriteLine($"Номер першого із стовпців, який не містить ні одного від’ємного елемента: {index}");
+            //mutex.ReleaseMutex();
             findNegativeDone.Set();
         }
 
         static void SumNegative(int[,] matrix)
         {
+            //mutex.WaitOne();
             findNegativeDone.WaitOne();
             Console.WriteLine("\nПідрахунок суми кожного рядка..");
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -97,7 +101,7 @@ namespace Lab7
         {
             sumNegativeDone.WaitOne();
             Console.WriteLine("\nСортування рядків.. ");
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
             int rowCount = matrix.GetLength(0);
             int colCount = matrix.GetLength(1);
@@ -135,6 +139,7 @@ namespace Lab7
 
             Console.WriteLine("Матриця після сортування:");
             Print(matrix);
+            //mutex.ReleaseMutex();
         }
         static void Print(int[,] matrix)
         {
