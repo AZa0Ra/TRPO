@@ -101,27 +101,27 @@ namespace Lab10
             double sequentialResult = SequentialReduction(n);
             stopwatch.Stop();
             double sequentialTime = stopwatch.Elapsed.TotalMilliseconds;
-            SequentialTimeTextBlock.Text = $"Sequential Time: {sequentialTime:F6} ms";
+            SequentialTimeTextBlock.Text = $"Послідовний час: {sequentialTime:F6} мс";
 
             // Паралельне 
             stopwatch.Restart();
             double parallelResult = ParallelReduction(n);
             stopwatch.Stop();
             double parallelTime = stopwatch.Elapsed.TotalMilliseconds;
-            ParallelTimeTextBlock.Text = $"Parallel Time: {parallelTime:F6} ms";
+            ParallelTimeTextBlock.Text = $"Паралельний час: {parallelTime:F6} мс";
 
             double speedup = sequentialTime / parallelTime;
             double efficiency = speedup / p;
-            SpeedupTextBlock.Text = $"Speedup: {speedup:F6}";
-            EfficiencyTextBlock.Text = $"Efficiency: {efficiency:F6}";
+            SpeedupTextBlock.Text = $"Прискорення: {speedup:F6}";
+            EfficiencyTextBlock.Text = $"Ефективність: {efficiency:F6}";
 
             double S_Amdahl = 1 / ((1 - (1 / speedup)) + (1 / p));
-            AmdahlTextBlock.Text = $"Amdahl's Speedup: {S_Amdahl:F6}";
+            AmdahlTextBlock.Text = $"Закон Амдала: {S_Amdahl:F6}";
 
             double S_Gustafson = (1 - (1 / p)) * speedup + (1 / p);
-            GustafsonTextBlock.Text = $"Gustafson-Barsis Speedup: {S_Gustafson:F6}";
+            GustafsonTextBlock.Text = $"Закон Густавсона-Барсіса: {S_Gustafson:F6}";
 
-            ResultTextBlock.Text = $"Scalar product result: {sequentialResult}\nParallel product result: {parallelResult}";
+            ResultTextBlock.Text = $"Послідовний результат: {sequentialResult}\nПаралельний результат: {parallelResult}";
         }
     }
 }

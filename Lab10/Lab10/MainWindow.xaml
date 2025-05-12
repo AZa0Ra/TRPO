@@ -53,7 +53,7 @@
 
 
         <Button Name="StartButton" 
-                Content="Start Calculation" 
+                Content="Старт" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Bottom"
                 Width="150" 
