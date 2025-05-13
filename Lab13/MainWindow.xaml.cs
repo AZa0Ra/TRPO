@@ -1,18 +1,10 @@
 ﻿using System.Diagnostics;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 using LiveCharts;
 using LiveCharts.Wpf;
 
-namespace Lab12
+namespace Lab13
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -135,14 +127,6 @@ namespace Lab12
 
             // Час базової операції
             double opTime = MeasureBasicOperationTime(data, 8, out int comparisons);
-
-            //MessageBox.Show(
-            //    $"📊 Метрики продуктивності:\n\n" +
-            //    $"⏱️ Латентність (8 потоків): {latency:F3} мс\n" +
-            //    $"📈 Пропускна здатність: {throughput:F2} ел/сек\n" +
-            //    $"⚙️ Час 1 порівняння: {opTime:F6} мс\n" +
-            //    $"🔁 Всього порівнянь: {comparisons}"
-            //);
 
             TimeResultTextBlock.Text = $"Метрики продуктивності:\n\n" +
                 $"Латентність (8 потоків): {latency:F3} мс\n" +
